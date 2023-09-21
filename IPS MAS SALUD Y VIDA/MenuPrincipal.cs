@@ -88,7 +88,7 @@ namespace IPS_MAS_SALUD_Y_VIDA
                 try
                 {
                     titulos1();
-                    Console.SetCursorPosition(35, 11); Console.WriteLine("ID ESTABLECIMIENTO       : ");
+                    Console.SetCursorPosition(35, 11); Console.WriteLine("ID LIQUIDACION       : ");
                     Console.SetCursorPosition(35, 12); Console.WriteLine("NOMBRE ESTABLECIMIENTO   : ");
                     Console.SetCursorPosition(35, 13); Console.WriteLine("INGRESOS ANUALES         : ");
                     Console.SetCursorPosition(35, 14); Console.WriteLine("GASTOS ANUALES           : ");
