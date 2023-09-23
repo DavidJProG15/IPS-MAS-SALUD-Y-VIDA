@@ -79,7 +79,7 @@ namespace IPS_MAS_SALUD_Y_VIDA
             char TipoAfiliacion;
             double SalarioDevengado;
             double valorHospitalizacion;
-            double SalarioMinimo;
+            
             
 
             char OP = 'S';
@@ -87,13 +87,13 @@ namespace IPS_MAS_SALUD_Y_VIDA
             {
                 try
                 {
-                    titulos1();
-                    Console.SetCursorPosition(35, 11); Console.WriteLine("ID LIQUIDACION       : ");
-                    Console.SetCursorPosition(35, 12); Console.WriteLine("NOMBRE ESTABLECIMIENTO   : ");
-                    Console.SetCursorPosition(35, 13); Console.WriteLine("INGRESOS ANUALES         : ");
-                    Console.SetCursorPosition(35, 14); Console.WriteLine("GASTOS ANUALES           : ");
-                    Console.SetCursorPosition(35, 15); Console.WriteLine("TIEMPO DE FUNCIONAMIENTO : ");
-                    Console.SetCursorPosition(35, 16); Console.WriteLine("TIPO DE RESPONSABILIDAD  : ");
+                    titulos();
+                    Console.SetCursorPosition(35, 11); Console.WriteLine("ID LIQUIDACION        : ");
+                    Console.SetCursorPosition(35, 12); Console.WriteLine("ID DEL PACIENTE       : ");
+                    Console.SetCursorPosition(35, 13); Console.WriteLine("SALARIO DEVENGADO     : ");
+                    Console.SetCursorPosition(35, 14); Console.WriteLine("VALOR HOSPITALIZACION : ");
+                    Console.SetCursorPosition(35, 15); Console.WriteLine("TIPO DE AFILIACION    : ");
+                    
 
                     Console.SetCursorPosition(62, 11); idLiquidacion = Console.ReadLine();
                     Console.SetCursorPosition(62, 12); idPaciente = Console.ReadLine().ToUpper();
@@ -105,20 +105,16 @@ namespace IPS_MAS_SALUD_Y_VIDA
                     {
                         Console.SetCursorPosition(62, 14); valorHospitalizacion = Convert.ToDouble(Console.ReadLine());
                     } while (valorHospitalizacion < 0);
-                    do
-                    {
-                        Console.SetCursorPosition(62, 15); SalarioMinimo = Convert.ToInt32(Console.ReadLine());
-                    } while (SalarioMinimo < 0);
+                   
                     do
                     {
                         Console.SetCursorPosition(35, 25); Console.WriteLine("Digite S: Subsidiado C: Contributivo");
-                        Console.SetCursorPosition(62, 16); TipoAfiliacion = Convert.ToChar(Console.ReadLine().ToUpper());
+                        Console.SetCursorPosition(62, 15); TipoAfiliacion = Convert.ToChar(Console.ReadLine().ToUpper());
                     } while ((TipoAfiliacion != 'S') && (TipoAfiliacion != 'C'));
 
 
-                    Liquidacion producto = new Liquidacion(idLiquidacion, idPaciente, SalarioDevengado, valorHospitalizacion, SalarioMinimo,
-                        TipoAfiliacion, 0, 0, 0, 0);
-                    
+                    Liquidacion producto = new Liquidacion(idLiquidacion, idPaciente, TipoAfiliacion, SalarioDevengado, valorHospitalizacion );
+                    producto.
                     
                     Console.SetCursorPosition(34, 25); Console.WriteLine(productoService.GuardarRegistros(producto));
                     {
@@ -133,6 +129,13 @@ namespace IPS_MAS_SALUD_Y_VIDA
                     Console.SetCursorPosition(35, 25); Console.Write("Ingresa un dato valido");
                 }
             }
+        }
+        public void titulos()
+        {
+            Console.SetCursorPosition(115, 6); Console.WriteLine("UNIVERSIDAD POPULAR DEL CESAR");
+            Console.SetCursorPosition(116, 7); Console.WriteLine("IPS MAS SALUD Y VIDA");
+            Console.SetCursorPosition(108, 8); Console.WriteLine("SOFTWARE DE LIQUIDACION");
+            
         }
     }
 }
