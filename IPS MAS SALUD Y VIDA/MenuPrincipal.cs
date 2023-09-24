@@ -177,9 +177,9 @@ namespace IPS_MAS_SALUD_Y_VIDA
         }
         public void titulos()
         {
-            Console.SetCursorPosition(115, 5); Console.WriteLine("UNIVERSIDAD POPULAR DEL CESAR");
-            Console.SetCursorPosition(118, 6); Console.WriteLine("IPS MAS SALUD Y VIDA");
-            Console.SetCursorPosition(116, 7); Console.WriteLine("SOFTWARE DE LIQUIDACION");
+            Console.SetCursorPosition(98, 5); Console.WriteLine("UNIVERSIDAD POPULAR DEL CESAR");
+            Console.SetCursorPosition(102, 6); Console.WriteLine("IPS MAS SALUD Y VIDA");
+            Console.SetCursorPosition(100, 7); Console.WriteLine("SOFTWARE DE LIQUIDACION");
             
         }
     }
