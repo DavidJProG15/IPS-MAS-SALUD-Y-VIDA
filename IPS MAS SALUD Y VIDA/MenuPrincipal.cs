@@ -22,11 +22,9 @@ namespace IPS_MAS_SALUD_Y_VIDA
         {
             int OPC;
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.SetCursorPosition(101, 6); Console.WriteLine("UNIVERSIDAD POPULAR DEL CESAR");
-            Console.SetCursorPosition(102, 7); Console.WriteLine("IPS");
-            Console.SetCursorPosition(94, 8); Console.WriteLine("SOFTWARE DE IPS");
+            titulos();
             Console.SetCursorPosition(102, 9); Console.WriteLine("M E N U  P R I N C I P A L");
-            Console.SetCursorPosition(101, 13); Console.WriteLine("1. REGISTRO DE PACIENTE");
+            Console.SetCursorPosition(101, 12); Console.WriteLine("1. REGISTRO DE PACIENTE");
             Console.SetCursorPosition(101, 14); Console.WriteLine("2. CONSULTA DE PACIENTE");
             Console.SetCursorPosition(101, 16); Console.WriteLine("3. ELIMINAR PACIENTE");
             Console.SetCursorPosition(101, 18); Console.WriteLine("4. SALIR");
@@ -63,7 +61,7 @@ namespace IPS_MAS_SALUD_Y_VIDA
                         break;
                     case 3:
                         Console.Clear();
-                       //EliminarRegistro();
+                       EliminarRegistro();
                         Console.Clear();
                         break;
                     case 4:
@@ -163,11 +161,25 @@ namespace IPS_MAS_SALUD_Y_VIDA
                 Console.SetCursorPosition(108, 25); Console.WriteLine("No hay registros para mostrar.");
             }
         }
+
+        private void EliminarRegistro()
+        {
+            Console.Clear();
+            titulos();
+            Console.SetCursorPosition(35, 11); Console.Write("Ingrese el ID del Paciente que desea eliminar: ");
+            Console.SetCursorPosition(89, 11); string idAEliminar = Console.ReadLine();
+
+            string mensaje = productoService.EliminarRegistro(idAEliminar);
+
+            Console.SetCursorPosition(35, 13); Console.WriteLine(mensaje);
+            Console.SetCursorPosition(30, 15); Console.WriteLine("Presione Enter para continuar.");
+            Console.SetCursorPosition(50, 15); Console.ReadLine();
+        }
         public void titulos()
         {
             Console.SetCursorPosition(115, 6); Console.WriteLine("UNIVERSIDAD POPULAR DEL CESAR");
             Console.SetCursorPosition(118, 7); Console.WriteLine("IPS MAS SALUD Y VIDA");
-            Console.SetCursorPosition(126, 8); Console.WriteLine("SOFTWARE DE LIQUIDACION");
+            Console.SetCursorPosition(116, 8); Console.WriteLine("SOFTWARE DE LIQUIDACION");
             
         }
     }
