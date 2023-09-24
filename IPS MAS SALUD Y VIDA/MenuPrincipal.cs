@@ -74,11 +74,11 @@ namespace IPS_MAS_SALUD_Y_VIDA
         }
         public void registro()
         {
-            string idLiquidacion;
-            string idPaciente;
-            char TipoAfiliacion;
-            double SalarioDevengado;
-            double valorHospitalizacion;
+            string idl;
+            string idp;
+            char tipa;
+            double salade;
+            double valho;
             
             
 
@@ -95,26 +95,26 @@ namespace IPS_MAS_SALUD_Y_VIDA
                     Console.SetCursorPosition(35, 15); Console.WriteLine("TIPO DE AFILIACION    : ");
                     
 
-                    Console.SetCursorPosition(62, 11); idLiquidacion = Console.ReadLine();
-                    Console.SetCursorPosition(62, 12); idPaciente = Console.ReadLine().ToUpper();
+                    Console.SetCursorPosition(62, 11); idl = Console.ReadLine();
+                    Console.SetCursorPosition(62, 12); idp = Console.ReadLine().ToUpper();
                     do
                     {
-                        Console.SetCursorPosition(62, 13); SalarioDevengado = Convert.ToDouble(Console.ReadLine());
-                    } while (SalarioDevengado < 0);
+                        Console.SetCursorPosition(62, 13); salade = Convert.ToDouble(Console.ReadLine());
+                    } while (salade < 0);
                     do
                     {
-                        Console.SetCursorPosition(62, 14); valorHospitalizacion = Convert.ToDouble(Console.ReadLine());
-                    } while (valorHospitalizacion < 0);
+                        Console.SetCursorPosition(62, 14); valho = Convert.ToDouble(Console.ReadLine());
+                    } while (valho < 0);
                    
                     do
                     {
                         Console.SetCursorPosition(35, 25); Console.WriteLine("Digite S: Subsidiado C: Contributivo");
-                        Console.SetCursorPosition(62, 15); TipoAfiliacion = Convert.ToChar(Console.ReadLine().ToUpper());
-                    } while ((TipoAfiliacion != 'S') && (TipoAfiliacion != 'C'));
+                        Console.SetCursorPosition(62, 15); tipa = Convert.ToChar(Console.ReadLine().ToUpper());
+                    } while ((tipa != 'S') && (tipa != 'C'));
 
 
-                    Liquidacion producto = new Liquidacion(idLiquidacion, idPaciente, TipoAfiliacion, SalarioDevengado, valorHospitalizacion );
-                    producto.
+                    Liquidacion producto = new Liquidacion(idl, idp, tipa, salade, valho);
+                    
                     
                     Console.SetCursorPosition(34, 25); Console.WriteLine(productoService.GuardarRegistros(producto));
                     {

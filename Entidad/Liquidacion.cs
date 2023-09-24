@@ -10,20 +10,21 @@ namespace Entidad
     {
         public string IdLiquidacion { get; set; }
         public string IdPaciente { get;set; }
-        public string TipoAfiliacion { get; set; }
+        public char TipoAfiliacion { get; set; }
         public double SalarioDevengado { get; set; }
         public double valorHospitalizacion { get; set; }
-        public double SalarioMinimo { get; set; } = 1160000;
+        public double SalarioMinimo { get; set; } 
         public double ValorTotal { get; set; }
         
-        public Liquidacion(string idLiquidacion, string idPaciente, double salarioDevengado1, string tipoAfiliacion, double salarioDevengado, double valorHospitalizacion, double salariominimo)
+        public Liquidacion(string idLiquidacion, string idPaciente, char tipoAfiliacion, double salarioDevengado, double valorHospitalizacion )
         {
             this.IdLiquidacion = idLiquidacion;
             this.IdPaciente = idPaciente;
             this.TipoAfiliacion = tipoAfiliacion;
             this.SalarioDevengado = salarioDevengado;
             this.valorHospitalizacion = valorHospitalizacion;
-            this.SalarioMinimo = salariominimo;
+            this.SalarioMinimo = 1160000;
+            //salariominimo = 1160000;
         }
         public Liquidacion() { }
 
