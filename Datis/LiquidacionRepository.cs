@@ -55,7 +55,7 @@ namespace Datos
             l.TipoAfiliacion = char.Parse(linea.Split(';')[2]);
             l.SalarioDevengado = double.Parse(linea.Split(';')[3]);
             l.valorHospitalizacion = double.Parse(linea.Split(';')[4]);
-
+            l.ValorTotal = double.Parse(linea.Split(';')[5]);
             return l;
         }
     }
