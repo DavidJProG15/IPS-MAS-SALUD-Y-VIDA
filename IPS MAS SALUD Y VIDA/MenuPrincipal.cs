@@ -21,7 +21,7 @@ namespace IPS_MAS_SALUD_Y_VIDA
         public int menuPrincipal()
         {
             int OPC;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Green;
             titulos();
             Console.SetCursorPosition(102, 9); Console.WriteLine("M E N U  P R I N C I P A L");
             Console.SetCursorPosition(101, 12); Console.WriteLine("1. REGISTRO DE PACIENTE");
@@ -177,9 +177,9 @@ namespace IPS_MAS_SALUD_Y_VIDA
         }
         public void titulos()
         {
-            Console.SetCursorPosition(115, 6); Console.WriteLine("UNIVERSIDAD POPULAR DEL CESAR");
-            Console.SetCursorPosition(118, 7); Console.WriteLine("IPS MAS SALUD Y VIDA");
-            Console.SetCursorPosition(116, 8); Console.WriteLine("SOFTWARE DE LIQUIDACION");
+            Console.SetCursorPosition(115, 5); Console.WriteLine("UNIVERSIDAD POPULAR DEL CESAR");
+            Console.SetCursorPosition(118, 6); Console.WriteLine("IPS MAS SALUD Y VIDA");
+            Console.SetCursorPosition(116, 7); Console.WriteLine("SOFTWARE DE LIQUIDACION");
             
         }
     }
