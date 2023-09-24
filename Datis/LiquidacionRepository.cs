@@ -47,12 +47,16 @@ namespace Datos
                 return null;
             }
         }
-        private Liquidacion Map(string line)
+        private Liquidacion Map(string linea)
         {
-            var liquidacion = new Liquidacion();
-            var datos = line.Split(';');
-            return liquidacion;
+            var l = new Liquidacion();
+            l.IdLiquidacion = linea.Split(';')[0];
+            l.IdPaciente = linea.Split(';')[1];
+            l.TipoAfiliacion = char.Parse(linea.Split(';')[2]);
+            l.SalarioDevengado = double.Parse(linea.Split(';')[3]);
+            l.valorHospitalizacion = double.Parse(linea.Split(';')[4]);
 
+            return l;
         }
     }
 }

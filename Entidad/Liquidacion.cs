@@ -41,7 +41,7 @@ namespace Entidad
                 if (SalarioDevengado < SalarioMinimo * 2)
                 {
                     ValorTotal = (SalarioDevengado * 0.15);
-                    if (ValorTotal < SalarioDevengado * 2)
+                    if (ValorTotal > 250000)
                     {
                         ValorTotal = 250000;
                     }
@@ -49,22 +49,20 @@ namespace Entidad
                 else if ((SalarioDevengado > SalarioMinimo * 2) && (SalarioDevengado < SalarioMinimo * 5))
                 {
                     ValorTotal = (SalarioDevengado * 0.20);
-                    if ((ValorTotal > SalarioMinimo * 2) && (ValorTotal < SalarioMinimo * 5))
+                    if ((ValorTotal > 900000 ))
                     {
                         ValorTotal = 900000;
                     }
                 }
                 else if (SalarioDevengado > SalarioMinimo * 5)
                 {
-                    ValorTotal = (SalarioDevengado * 0.25);
-                    if (ValorTotal < SalarioDevengado * 2)
-                    {
-                        ValorTotal = 250000;
-                        if (ValorTotal > SalarioDevengado * 5)
+                    ValorTotal = (SalarioDevengado * 0.25);                    
+                        
+                        if (ValorTotal > 1500000)
                         {
                             ValorTotal = 1500000;
                         }
-                    }
+                    
                 }
                 
             }

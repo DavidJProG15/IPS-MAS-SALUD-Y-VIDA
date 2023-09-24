@@ -136,21 +136,21 @@ namespace IPS_MAS_SALUD_Y_VIDA
             titulos();
             try
             {
-                Console.SetCursorPosition(35, 15); Console.WriteLine("ID ESTABLECIMIENTO  ESTABLECIMIENTO            INGRESOS ANUALES     GASTOS ANUALES    TIEMPO DE FUNCIONAMIENTO  TIPO DE RESPONSABILIDAD  GANANCIA     VALOR UVT   TARIFA  IMPUESTO");
+                Console.SetCursorPosition(35, 15); Console.WriteLine("ID LIQUIDACION  PACIENTE            TIPO AFILIACION     SALARIO DEVANGADO ||   TIEMPO DE FUNCIONAMIENTO  TIPO DE RESPONSABILIDAD  GANANCIA     VALOR UVT   TARIFA  IMPUESTO");
                 int X = 17;
                 var lista = productoService.CargarRegistros();
                 foreach (var i in lista)
                 {
-                    Console.SetCursorPosition(42, X); Console.WriteLine(i.idEstablecimiento);
-                    Console.SetCursorPosition(59, X); Console.WriteLine(i.nombreEstablecimiento);
-                    Console.SetCursorPosition(83, X); Console.WriteLine($"{i.ingresosAnuales:C}");
-                    Console.SetCursorPosition(103, X); Console.WriteLine($"{i.gastosAnuales:C}");
-                    Console.SetCursorPosition(131, X); Console.WriteLine(i.tiempoFuncionamiento);
-                    Console.SetCursorPosition(159, X); Console.WriteLine(i.tipoResponsabilidad);
-                    Console.SetCursorPosition(169, X); Console.WriteLine($"{i.ganancia:C}");
-                    Console.SetCursorPosition(187, X); Console.WriteLine(i.valorUVT.ToString("F1"));
-                    Console.SetCursorPosition(199, X); Console.WriteLine(i.tarifaAplicada.ToString("F1"));
-                    Console.SetCursorPosition(206, X); Console.WriteLine($"{i.impuestoApagar:C}");
+                    Console.SetCursorPosition(42, X); Console.WriteLine(i.IdLiquidacion);
+                    Console.SetCursorPosition(59, X); Console.WriteLine(i.IdPaciente);
+                    Console.SetCursorPosition(83, X); Console.WriteLine($"{i.TipoAfiliacion:C}");
+                    Console.SetCursorPosition(103, X); Console.WriteLine($"{i.SalarioDevengado:C}");
+                    Console.SetCursorPosition(131, X); Console.WriteLine(i.valorHospitalizacion);
+                    //Console.SetCursorPosition(159, X); Console.WriteLine(i.tipoResponsabilidad);
+                    //.SetCursorPosition(169, X); Console.WriteLine($"{i.ganancia:C}");
+                    //Console.SetCursorPosition(187, X); Console.WriteLine(i.valorUVT.ToString("F1"));
+                    //Console.SetCursorPosition(199, X); Console.WriteLine(i.tarifaAplicada.ToString("F1"));
+                    //Console.SetCursorPosition(206, X); Console.WriteLine($"{i.impuestoApagar:C}");
                     X++;
                 }
                 Console.SetCursorPosition(115, 14 + X); Console.WriteLine("Presione cualquier tecla para continuar.");
