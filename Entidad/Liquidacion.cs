@@ -30,42 +30,47 @@ namespace Entidad
 
         public double TarifaContributiva()
         {
-            
-            if (SalarioDevengado < SalarioMinimo * 2)
+            if (TipoAfiliacion == 'S')
             {
-                ValorTotal = (SalarioDevengado * 0.15);
-                if (ValorTotal < SalarioDevengado * 2)
-                {
-                    ValorTotal = 250000;
-                }
+                SalarioDevengado = 0;
+                return SalarioDevengado;
+
             }
-            else if ((SalarioDevengado > SalarioMinimo * 2) && (SalarioDevengado < SalarioMinimo * 5))
+            else if(TipoAfiliacion == 'C')
             {
-                ValorTotal = (SalarioDevengado * 0.20);
-                if ((ValorTotal > SalarioMinimo * 2) && (ValorTotal < SalarioMinimo * 5))
+                if (SalarioDevengado < SalarioMinimo * 2)
                 {
-                    ValorTotal = 900000;
-                }
-            }
-            else if (SalarioDevengado > SalarioMinimo * 5)
-            {
-                ValorTotal = (SalarioDevengado * 0.25);
-                if (ValorTotal < SalarioDevengado * 2)
-                {
-                    ValorTotal = 250000;
-                    if (ValorTotal > SalarioDevengado * 5)
+                    ValorTotal = (SalarioDevengado * 0.15);
+                    if (ValorTotal < SalarioDevengado * 2)
                     {
-                        ValorTotal = 1500000;
+                        ValorTotal = 250000;
                     }
                 }
+                else if ((SalarioDevengado > SalarioMinimo * 2) && (SalarioDevengado < SalarioMinimo * 5))
+                {
+                    ValorTotal = (SalarioDevengado * 0.20);
+                    if ((ValorTotal > SalarioMinimo * 2) && (ValorTotal < SalarioMinimo * 5))
+                    {
+                        ValorTotal = 900000;
+                    }
+                }
+                else if (SalarioDevengado > SalarioMinimo * 5)
+                {
+                    ValorTotal = (SalarioDevengado * 0.25);
+                    if (ValorTotal < SalarioDevengado * 2)
+                    {
+                        ValorTotal = 250000;
+                        if (ValorTotal > SalarioDevengado * 5)
+                        {
+                            ValorTotal = 1500000;
+                        }
+                    }
+                }
+                
             }
             return ValorTotal;
         }
-        public double TarifaSubsidiada()
-        {
-            SalarioDevengado = 0;
-            return SalarioDevengado;
-        }
+        
 
         public override string ToString()
         {

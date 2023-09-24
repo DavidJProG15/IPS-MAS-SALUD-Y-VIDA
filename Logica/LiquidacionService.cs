@@ -23,7 +23,7 @@ namespace Logica
         public String GuardarRegistros(Liquidacion producto)
         {
             if (producto.IdLiquidacion == null || producto.valorHospitalizacion == 0
-                || producto.TipoAfiliacion == null || producto.IdPaciente == null)
+                 || producto.IdPaciente == null)
             {
                 return $"Campos nulos";
             }

@@ -58,12 +58,12 @@ namespace IPS_MAS_SALUD_Y_VIDA
                         break;
                     case 2:
                         Console.Clear();
-                        MostrarRegistro();
+                        //MostrarRegistro();
                         Console.Clear();
                         break;
                     case 3:
                         Console.Clear();
-                        EliminarRegistro();
+                       //EliminarRegistro();
                         Console.Clear();
                         break;
                     case 4:
@@ -128,6 +128,39 @@ namespace IPS_MAS_SALUD_Y_VIDA
                 {
                     Console.SetCursorPosition(35, 25); Console.Write("Ingresa un dato valido");
                 }
+            }
+        }
+
+        public void MostrarRegistro()
+        {
+            titulos();
+            try
+            {
+                Console.SetCursorPosition(35, 15); Console.WriteLine("ID ESTABLECIMIENTO  ESTABLECIMIENTO            INGRESOS ANUALES     GASTOS ANUALES    TIEMPO DE FUNCIONAMIENTO  TIPO DE RESPONSABILIDAD  GANANCIA     VALOR UVT   TARIFA  IMPUESTO");
+                int X = 17;
+                var lista = productoService.CargarRegistros();
+                foreach (var i in lista)
+                {
+                    Console.SetCursorPosition(42, X); Console.WriteLine(i.idEstablecimiento);
+                    Console.SetCursorPosition(59, X); Console.WriteLine(i.nombreEstablecimiento);
+                    Console.SetCursorPosition(83, X); Console.WriteLine($"{i.ingresosAnuales:C}");
+                    Console.SetCursorPosition(103, X); Console.WriteLine($"{i.gastosAnuales:C}");
+                    Console.SetCursorPosition(131, X); Console.WriteLine(i.tiempoFuncionamiento);
+                    Console.SetCursorPosition(159, X); Console.WriteLine(i.tipoResponsabilidad);
+                    Console.SetCursorPosition(169, X); Console.WriteLine($"{i.ganancia:C}");
+                    Console.SetCursorPosition(187, X); Console.WriteLine(i.valorUVT.ToString("F1"));
+                    Console.SetCursorPosition(199, X); Console.WriteLine(i.tarifaAplicada.ToString("F1"));
+                    Console.SetCursorPosition(206, X); Console.WriteLine($"{i.impuestoApagar:C}");
+                    X++;
+                }
+                Console.SetCursorPosition(115, 14 + X); Console.WriteLine("Presione cualquier tecla para continuar.");
+                Console.SetCursorPosition(155, 14 + X); Console.ReadKey();
+                Console.Clear();
+            }
+            catch (IOException)
+            {
+                Console.SetCursorPosition(108, 20); Console.Write("Ups... Algo pasó");
+                Console.SetCursorPosition(108, 25); Console.WriteLine("No hay registros para mostrar.");
             }
         }
         public void titulos()

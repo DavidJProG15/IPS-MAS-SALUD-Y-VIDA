@@ -12,12 +12,12 @@ namespace Datos
     public class LiquidacionRepository
     {
         string filePath = "LIQUIDACIONES.txt";
-        public string GuardarArchivo(Liquidacion liquidacion)
+        public string GuardarRegistros(Liquidacion producto)
         {
             var write = new StreamWriter(filePath, true);
-            write.WriteLine(liquidacion.ToString());
+            write.WriteLine(producto.ToString());
             write.Close();
-            return $"El registro se ha guardado correctamente";
+            return $"Registro almacenado";
         }
         public string Guardar(List<Liquidacion> liquidacionList)
         {
